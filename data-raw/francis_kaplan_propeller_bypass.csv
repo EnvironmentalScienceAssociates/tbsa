@@ -1,0 +1,10 @@
+route,route_prob,route_type,D,N,B,Q,opt,H,rpm,xi,lambda,D1,D2,eta,est_mortality
+PH East 1,0.1,Francis,12,13,2,2300,0.88,50,100,1.1,0.2,11,8,0.85,
+PH East 2,0.1,Francis,12,13,2.1,2350,0.88,50,100,1.1,0.2,11.2,8.1,0.87,
+PH West 1,0.12,Kaplan,9.5,5,,1600,,47,95,,0.2,,,0.91,
+PH West 2,0.12,propeller,10,5,,1725,0.85,47,92,,0.2,,,0.9,
+PH West 3,0.12,propeller,10,5,,1700,0.85,47,92,,0.2,,,0.9,
+house unit,0.04,Francis,6,12,1.4,600,0.86,50,180,1.1,0.2,5.7,3.2,0.78,
+spillway,0.1,bypass,,,,,,,,,,,,,0.2
+flood gate,0.1,bypass,,,,,,,,,,,,,0.4
+DS fishway,0.2,bypass,,,,,,,,,,,,,0.01
