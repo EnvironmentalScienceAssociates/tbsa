@@ -1,4 +1,4 @@
-route,route_prob,route_type,D,N,B,Q,opt,H,rpm,xi,lambda,D1,D2,eta,est_mortality
+route_name,route_prob,route_type,D,N,B,Q,opt,H,rpm,xi,lambda,D1,D2,eta,est_mortality
 PH East 1,0.1,Francis,12,13,2,2300,0.88,50,100,1.1,0.2,11,8,0.85,
 PH East 2,0.1,Francis,12,13,2.1,2350,0.88,50,100,1.1,0.2,11.2,8.1,0.87,
 PH West 1,0.12,Kaplan,9.5,5,,1600,,47,95,,0.2,,,0.91,
