@@ -4,7 +4,18 @@
 \alias{propeller_strike}
 \title{Propeller blade strike probability}
 \usage{
-propeller_strike(Q, H, D, rpm, eta, opt, N, L, lambda = 0.2)
+propeller_strike(
+  Q,
+  H,
+  D,
+  rpm,
+  eta,
+  opt,
+  N,
+  L,
+  lambda = 0.2,
+  radius_ratio = 0.75
+)
 }
 \arguments{
 \item{Q}{Turbine discharge (cfs)}
@@ -24,6 +35,8 @@ propeller_strike(Q, H, D, rpm, eta, opt, N, L, lambda = 0.2)
 \item{L}{Fish length (ft)}
 
 \item{lambda}{Actual mortality correlation; influenced by many factors including unit type and fish species}
+
+\item{radius_ratio}{r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)}
 }
 \description{
 Calculates leading-edge blade strike probability from a propeller turbine

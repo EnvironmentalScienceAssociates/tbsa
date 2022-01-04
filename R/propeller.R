@@ -12,17 +12,16 @@
 #' @param N              Number of blades
 #' @param L              Fish length (ft)
 #' @param lambda         Actual mortality correlation; influenced by many factors including unit type and fish species
+#' @param radius_ratio   r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)
 #' @export
 
-propeller_strike <- function(Q, H, D, rpm, eta, opt, N, L, lambda = 0.2) {
-  R = 0.5 * D
-  r = 0.75 * R  # Radius at mid blade (ft)
+propeller_strike <- function(Q, H, D, rpm, eta, opt, N, L, lambda = 0.2, radius_ratio = 0.75) {
   dc = discharge_coef(Q, D, rpm)
-  alpha = propeller_alpha(Q, H, D, rpm, eta, opt, r)
+  alpha = propeller_alpha(Q, H, D, rpm, eta, opt, radius_ratio)
   # breaking the equation into a few pieces (abbreviated as pc)
   pc1 = (lambda * N * L)/D
   pc2 = cos(alpha)/(8*dc)
-  pc3 = sin(alpha)/((pi * r)/R)
+  pc3 = sin(alpha)/(pi * radius_ratio)
   pc1 * (pc2 + pc3)
 }
 
@@ -37,17 +36,16 @@ propeller_strike <- function(Q, H, D, rpm, eta, opt, N, L, lambda = 0.2) {
 #' @param rpm            Runner revolutions per minute
 #' @param eta            Turbine efficiency
 #' @param opt            Ratio of turbine discharge at best efficiency to hydraulic capacity
-#' @param r              Radius at mid blade (ft)
+#' @param radius_ratio   r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)
 #' @export
 
-propeller_alpha <- function(Q, H, D, rpm, eta, opt, r) {
+propeller_alpha <- function(Q, H, D, rpm, eta, opt, radius_ratio) {
   ec = energy_coef(H, D, rpm)
   dc = discharge_coef(Q, D, rpm)
-  beta = propeller_beta(Q, D, rpm, opt, r)
-  R = 0.5 * D
+  beta = propeller_beta(Q, D, rpm, opt, radius_ratio)
   num1 = (pi * ec * eta)/2
-  den1 = (dc * r)/R
-  num2 = (pi * r)/(8 * R)
+  den1 = dc * radius_ratio
+  num2 = (pi / 8) * radius_ratio
   atan((num1/den1) + (num2/dc) - tan(beta))
 }
 
@@ -60,11 +58,11 @@ propeller_alpha <- function(Q, H, D, rpm, eta, opt, r) {
 #' @param D              Nominal diameter (ft) of runner
 #' @param rpm            Runner revolutions per minute
 #' @param opt            Ratio of turbine discharge at best efficiency to hydraulic capacity
-#' @param r              Radius at mid blade (ft)
+#' @param radius_ratio   r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)
 #' @export
 
-propeller_beta <- function(Q, D, rpm, opt, r) {
-  num = (pi * r)/(8 * 0.5 * D)
+propeller_beta <- function(Q, D, rpm, opt, radius_ratio) {
+  num = (pi / 8) * radius_ratio
   den = discharge_coef(Q, D, rpm) * opt
   atan(num/den)
 }

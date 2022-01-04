@@ -4,7 +4,7 @@
 \alias{kaplan_alpha}
 \title{Kaplan alpha}
 \usage{
-kaplan_alpha(Q, H, D, rpm, eta, r)
+kaplan_alpha(Q, H, D, rpm, eta, radius_ratio)
 }
 \arguments{
 \item{Q}{Turbine discharge (cfs)}
@@ -17,7 +17,7 @@ kaplan_alpha(Q, H, D, rpm, eta, r)
 
 \item{eta}{Turbine efficiency}
 
-\item{r}{Radius at mid blade (ft)}
+\item{radius_ratio}{r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)}
 }
 \description{
 Angle (rad) to tangential of absolute flow upstream of runner

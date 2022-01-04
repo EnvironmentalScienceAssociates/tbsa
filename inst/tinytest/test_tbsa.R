@@ -28,7 +28,7 @@ energy_coef(H = 48, D = 10, rpm = 92) |>
 discharge_coef(Q = 1850, D = 10, rpm = 92) |>
   round(5) |>
   expect_equal(0.19202)
-propeller_alpha(Q = 1850, H = 48, D = 10, rpm = 92, eta = 0.8, opt = 0.9, r = 0.75*0.5*10) |>
+propeller_alpha(Q = 1850, H = 48, D = 10, rpm = 92, eta = 0.8, opt = 0.9, radius_ratio = 0.75) |>
   round(3) |>
   expect_equal(0.908)
 propeller_strike(Q = 1850, H = 48, D = 10, rpm = 92, eta = 0.8, opt = 0.9, N = 5, L = 1.81) |>
@@ -48,7 +48,7 @@ energy_coef(H = 47, D = 10, rpm = 100) |>
 discharge_coef(Q = 1800, D = 10, rpm = 100) |>
   round(5) |>
   expect_equal(0.17189)
-kaplan_alpha(Q = 1800, H = 47, D = 10, rpm = 100, eta = 0.9, r = 0.75*0.5*10) |>
+kaplan_alpha(Q = 1800, H = 47, D = 10, rpm = 100, eta = 0.9, radius_ratio = 0.75) |>
   round(3) |>
   expect_equal(0.986)
 kaplan_strike(Q = 1800, H = 47, D = 10, rpm = 100, eta = 0.9, N = 5, L = 1.75) |>
@@ -92,7 +92,7 @@ energy_coef(H = 52, D = 11, rpm = 95) |>
 discharge_coef(Q = 1800, D = 11, rpm = 95) |>
   round(5) |>
   expect_equal(0.13594)
-kaplan_alpha(Q = 1800, H = 52, D = 11, rpm = 95, eta = 0.9, r = 0.75*0.5*11) |>
+kaplan_alpha(Q = 1800, H = 52, D = 11, rpm = 95, eta = 0.9, radius_ratio = 0.75) |>
   round(3) |>
   expect_equal(1.094)
 kaplan_strike(Q = 1800, H = 52, D = 11, rpm = 95, eta = 0.9, N = 5, L = 1.94) |>
@@ -126,7 +126,7 @@ francis_strike(Q = 2300, H = 50, D = 12, D1 = 11, D2 = 8, rpm = 100,
   round(3) |>
   expect_equal(0.285)
 
-# Francis, Kaplan, and propeller w/ sipll, gates, and bypass --------------
+# Francis, Kaplan, and propeller w/ spill, gates, and bypass --------------
 
 ## Propeller --------------------------------------------------------------
 
@@ -138,7 +138,7 @@ energy_coef(H = 47, D = 10, rpm = 92) |>
 discharge_coef(Q = 1725, D = 10, rpm = 92) |>
   round(5) |>
   expect_equal(0.17905)
-propeller_alpha(Q = 1725, H = 47, D = 10, rpm = 92, eta = 0.9, opt = 0.85, r = 0.75*0.5*10) |>
+propeller_alpha(Q = 1725, H = 47, D = 10, rpm = 92, eta = 0.9, opt = 0.85, radius_ratio = 0.75) |>
   round(3) |>
   expect_equal(0.959)
 propeller_strike(Q = 1725, H = 47, D = 10, rpm = 92, eta = 0.9, opt = 0.85, N = 5, L = 1.84) |>
@@ -154,7 +154,7 @@ propeller_strike(Q = 1725, H = 47, D = 10, rpm = 92, eta = 0.9, opt = 0.85, N = 
 discharge_coef(Q = 1700, D = 10, rpm = 92) |>
   round(5) |>
   expect_equal(0.17645)
-propeller_alpha(Q = 1700, H = 47, D = 10, rpm = 92, eta = 0.9, opt = 0.85, r = 0.75*0.5*10) |>
+propeller_alpha(Q = 1700, H = 47, D = 10, rpm = 92, eta = 0.9, opt = 0.85, radius_ratio = 0.75) |>
   round(3) |>
   expect_equal(0.966)
 propeller_strike(Q = 1700, H = 47, D = 10, rpm = 92, eta = 0.9, opt = 0.85, N = 5, L = 1.69) |>
@@ -172,7 +172,7 @@ energy_coef(H = 47, D = 9.5, rpm = 95) |>
 discharge_coef(Q = 1600, D = 9.5, rpm = 95) |>
   round(5) |>
   expect_equal(0.18758)
-kaplan_alpha(Q = 1600, H = 47, D = 9.5, rpm = 95, eta = 0.91, r = 0.75*0.5*9.5) |>
+kaplan_alpha(Q = 1600, H = 47, D = 9.5, rpm = 95, eta = 0.91, radius_ratio = 0.75) |>
   round(3) |>
   expect_equal(1.044)
 kaplan_strike(Q = 1600, H = 47, D = 9.5, rpm = 95, eta = 0.91, N = 5, L = 1.19) |>

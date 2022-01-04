@@ -4,7 +4,7 @@
 \alias{kaplan_strike}
 \title{Kaplan blade strike probability}
 \usage{
-kaplan_strike(Q, H, D, rpm, eta, N, L, lambda = 0.2)
+kaplan_strike(Q, H, D, rpm, eta, N, L, lambda = 0.2, radius_ratio = 0.75)
 }
 \arguments{
 \item{Q}{Turbine discharge (cfs)}
@@ -22,6 +22,8 @@ kaplan_strike(Q, H, D, rpm, eta, N, L, lambda = 0.2)
 \item{L}{Fish length (ft)}
 
 \item{lambda}{Actual mortality correlation; influenced by many factors including unit type and fish species}
+
+\item{radius_ratio}{r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)}
 }
 \description{
 Calculates leading-edge blade strike probability from Kaplan turbine

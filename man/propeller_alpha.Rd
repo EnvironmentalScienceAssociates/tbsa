@@ -4,7 +4,7 @@
 \alias{propeller_alpha}
 \title{Propeller alpha}
 \usage{
-propeller_alpha(Q, H, D, rpm, eta, opt, r)
+propeller_alpha(Q, H, D, rpm, eta, opt, radius_ratio)
 }
 \arguments{
 \item{Q}{Turbine discharge (cfs)}
@@ -19,7 +19,7 @@ propeller_alpha(Q, H, D, rpm, eta, opt, r)
 
 \item{opt}{Ratio of turbine discharge at best efficiency to hydraulic capacity}
 
-\item{r}{Radius at mid blade (ft)}
+\item{radius_ratio}{r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)}
 }
 \description{
 Angle (rad) to tangential of absolute flow upstream of runner

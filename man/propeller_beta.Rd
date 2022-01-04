@@ -4,7 +4,7 @@
 \alias{propeller_beta}
 \title{Propeller beta}
 \usage{
-propeller_beta(Q, D, rpm, opt, r)
+propeller_beta(Q, D, rpm, opt, radius_ratio)
 }
 \arguments{
 \item{Q}{Turbine discharge (cfs)}
@@ -15,7 +15,7 @@ propeller_beta(Q, D, rpm, opt, r)
 
 \item{opt}{Ratio of turbine discharge at best efficiency to hydraulic capacity}
 
-\item{r}{Radius at mid blade (ft)}
+\item{radius_ratio}{r/R where R = 0.5 * D; passage near hub (0.5), mid-blade (0.75), blade tip (1)}
 }
 \description{
 Relative flow angle (rad) at turbine discharge; used in strike equations
