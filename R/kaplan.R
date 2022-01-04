@@ -3,7 +3,6 @@
 #' Calculates leading-edge blade strike probability from Kaplan turbine
 #'
 #' @md
-#' @md
 #' @param Q              Turbine discharge (cfs)
 #' @param H              Net head on the turbine (ft)
 #' @param D              Nominal diameter (ft) of runner
