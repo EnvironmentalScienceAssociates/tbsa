@@ -17,3 +17,14 @@ install.packages("remotes")
 ```
 remotes::install_github("EnvironmentalScienceAssociates/tbsa")
 ```
+
+### Usage
+
+The `tbsa` function runs the TBSA model simulation based on a data frame with route data. Example route data is included with the package in the data frame `route_data_ex`.
+
+```
+tbsa(fish_num = 10, 
+     length_mean = 1.5, 
+     length_sd = 0.25, 
+     route_data = route_data_ex)
+```
