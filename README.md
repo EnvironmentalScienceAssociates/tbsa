@@ -1,18 +1,18 @@
+[![tbsa status badge](https://environmentalscienceassociates.r-universe.dev/badges/tbsa)](https://environmentalscienceassociates.r-universe.dev)
+
 ## tbsa
 
 R implementation of the Turbine Blade Strike Analysis (TBSA) spreadsheet model provided by the U.S. Fish & Wildlife Service (based on the equations in [Frank et al. 1997](https://digital.library.unt.edu/ark:/67531/metadc690969/m2/1/high_res_d/563213.pdf)) for performing leading-edge blade strike analysis of hydropower turbines on fish.
 
-### Prerequisites
-
-Installation requires the R package [`remotes`](https://remotes.r-lib.org).
-
-```
-install.packages("remotes")
-```
-
 ### Installation
 
-`tbsa` is only available through GitHub.
+`tbsa` is available through R-universe
+
+```
+install.packages("tbsa", repos = "https://environmentalscienceassociates.r-universe.dev")
+```
+
+and GitHub.
 
 ```
 remotes::install_github("EnvironmentalScienceAssociates/tbsa")
