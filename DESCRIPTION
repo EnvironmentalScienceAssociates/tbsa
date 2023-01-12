@@ -6,7 +6,7 @@ Author: Travis Hinkelman
 Maintainer: Travis Hinkelman <thinkelman@esassoc.com>
 Description: R implementation of spreadsheet model provided by the USFWS for performing 
     leading-edge blade strike analysis of hydropower turbines on fish.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2

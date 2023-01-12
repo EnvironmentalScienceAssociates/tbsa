@@ -48,8 +48,8 @@ tbsa <- function(fish_num, length_mean, length_sd, route_data) {
 
   rand_df = data.frame(route_name = rand_route(fish_num, rd$route_name, rd$route_prob),
                        # following spreadsheet model, it is possible to generate negative fish lengths
-                       fish_length_ft = rnorm(fish_num, length_mean, length_sd),
-                       rand_unif = runif(fish_num))
+                       fish_length_ft = stats::rnorm(fish_num, length_mean, length_sd),
+                       rand_unif = stats::runif(fish_num))
 
   out = dplyr::left_join(rd, rand_df, by = "route_name") |>
     # not all route names will end up in rand_dt; dropping rows with no fish lengths
@@ -84,7 +84,7 @@ tbsa <- function(fish_num, length_mean, length_sd, route_data) {
 #' @export
 
 rand_route <- function(fish_num, route_names, route_probs){
-  multi_mat = rmultinom(fish_num, 1, route_probs)
+  multi_mat = stats::rmultinom(fish_num, 1, route_probs)
   route_vec = vector("character", length = fish_num)
   for (i in 1:ncol(multi_mat)){
     route_vec[i] = route_names[multi_mat[,i] == 1]
