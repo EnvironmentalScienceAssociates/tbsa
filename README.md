@@ -6,16 +6,23 @@ R implementation of the Turbine Blade Strike Analysis (TBSA) spreadsheet model p
 
 ### Installation
 
-`tbsa` is available through R-universe
+Enable repository.
 
 ```
-install.packages("tbsa", repos = "https://environmentalscienceassociates.r-universe.dev")
+options(repos = c(ESA = "https://environmentalscienceassociates.r-universe.dev",
+                  CRAN = "https://cloud.r-project.org"))
 ```
 
-and GitHub.
+Download and install `tbsa` in R.
 
 ```
-remotes::install_github("EnvironmentalScienceAssociates/tbsa")
+install.packages("tbsa")
+```
+
+Browse the `tbsa` manual pages.
+
+```
+help(package = "tbsa")
 ```
 
 ### Usage
